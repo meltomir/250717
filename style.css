@@ -1,0 +1,164 @@
+/* ===================================================
+   Google Fonts: ドットフォント
+=================================================== */
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+/* ===================================================
+   全体の基本スタイル
+=================================================== */
+body {
+  margin: 0;
+  height: 5000px;
+  background-image: url('./assets/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'DotGothic16', 'MS UI Gothic', monospace;
+  color: white;
+}
+
+/* ===================================================
+   歩く女の子のキャンバス
+=================================================== */
+canvas {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  width: 200px;
+  height: 400px;
+  image-rendering: pixelated;
+  z-index: 9999;
+}
+
+/* ===================================================
+   スクロールで出現するエラーウィンドウ
+=================================================== */
+.error-window {
+  position: fixed;
+  width: 200px;
+  height: auto;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ===================================================
+   ヘッダー（ドットUI風）
+=================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 12px 24px;
+  z-index: 10001;
+  font-family: 'DotGothic16', monospace;
+  border-bottom: 1px solid #888;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.site-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  gap: 16px;
+}
+
+.site-header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.site-header nav a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================================
+   ギャラリーセクション
+=================================================== */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.gallery-grid img {
+  width: 200px;
+  height: auto;
+  image-rendering: pixelated;
+  border: 1px solid #444;
+  background: #000;
+  padding: 4px;
+}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery - Look at the Sea</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <h1>Gallery</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main style="padding: 100px 24px;">
+    <h2>ギャラリー</h2>
+    <p>レトロドット絵やアートワークを展示しています。</p>
+
+    <div class="gallery-grid">
+      <!-- サンプル画像 -->
+      <img src="./assets/sample1.png" alt="sample1" />
+      <img src="./assets/sample2.png" alt="sample2" />
+      <img src="./assets/sample3.png" alt="sample3" />
+    </div>
+  </main>
+/* ===================================================
+   レスポンシブ対応（スマホなど幅が狭い画面向け）
+=================================================== */
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-header nav ul {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .site-header nav a {
+    font-size: 16px;
+  }
+}
+
+/* Aboutページだけ背景画像を station.jpg に */
+body.about-page {
+  background-image: url('./Assets/station.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
